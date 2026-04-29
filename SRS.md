@@ -47,7 +47,7 @@ April 2025
 
 ### 1.1 Purpose
 
-Dokumen Software Requirements Specification (SRS) ini mendeskripsikan spesifikasi kebutuhan perangkat lunak untuk aplikasi **TailoriX** – Platform Digital Jasa Permak & Alterasi Pakaian. Dokumen ini mencakup kebutuhan fungsional, nonfungsional, arsitektur sistem, dan kontrak API yang akan menjadi acuan pengembangan aplikasi TailoriX versi 1.0.
+Dokumen Software Requirements Specification (SRS) ini mendeskripsikan spesifikasi kebutuhan perangkat lunak untuk aplikasi **TailoriX** – Platform Digital Jasa Permak & Alterasi Pakaian. Dokumen ini mencakup deskripsi fungsionalitas, antarmuka pengguna, kebutuhan non-fungsional, dan spesifikasi teknis sistem.
 
 SRS ini disusun sebagai bagian dari mata kuliah Rekayasa Perangkat Lunak. Platform ini dibangun untuk menghubungkan pelanggan dengan penjahit mitra UMKM secara digital, transparan, dan terukur.
 
@@ -76,7 +76,7 @@ Disarankan untuk membaca dokumen secara berurutan dari Bab 1 hingga Bab 7, kemud
 
 ### 1.4 Product Scope
 
-TailoriX adalah platform digital berbasis mobile yang menghubungkan pelanggan dengan penjahit mitra UMKM penyedia jasa permak, alterasi, dan perbaikan pakaian. Platform ini dirancang untuk menjawab permasalahan digitalisasi industri permak baju di Indonesia yang masih berjalan secara konvensional.
+TailoriX adalah platform digital berbasis mobile yang menghubungkan pelanggan dengan penjahit mitra UMKM penyedia jasa permak, alterasi, dan perbaikan pakaian. Platform ini dirancang untuk menjawab permasalahan kesulitan menemukan jasa permak berkualitas dan terpercaya di era digital.
 
 **Manfaat utama platform ini meliputi:**
 
@@ -109,7 +109,7 @@ TailoriX adalah platform digital berbasis mobile yang menghubungkan pelanggan de
 
 ### 2.1 Product Perspective
 
-TailoriX merupakan platform baru yang berdiri sendiri (new, self-contained product), bukan merupakan bagian dari sistem yang lebih besar. Platform ini terdiri dari dua aplikasi mobile (untuk pelanggan dan penjahit), sebuah REST API backend, ML service untuk estimasi harga, dan workflow automation engine.
+TailoriX merupakan platform baru yang berdiri sendiri (new, self-contained product), bukan merupakan bagian dari sistem yang lebih besar. Platform ini terdiri dari dua aplikasi mobile (untuk pelanggan dan penjahit) dan satu backend API yang terpusat, dilengkapi dengan layanan ML untuk estimasi harga.
 
 Sistem TailoriX berinteraksi dengan komponen eksternal berikut:
 - Midtrans Payment Gateway (pemrosesan pembayaran)
@@ -277,7 +277,7 @@ Fitur ini memungkinkan pelanggan mencari dan memilih penjahit mitra berdasarkan 
 **Prioritas: High**
 
 #### 4.2.2 Stimulus/Response Sequences
-- Pelanggan buka halaman pencarian → izinkan akses lokasi → sistem tampilkan daftar penjahit terdekat → pelanggan terapkan filter → sistem perbarui daftar → pelanggan pilih penjahit → tampil profil detail penjahit.
+- Pelanggan buka halaman pencarian → izinkan akses lokasi → sistem tampilkan daftar penjahit terdekat → pelanggan terapkan filter → sistem perbarui daftar → pelanggan pilih penjahit → tampil profil lengkap.
 - Pelanggan pilih tampilan map → tampil peta dengan pin penjahit → pelanggan tap pin → tampil info singkat → pelanggan tap 'Lihat Profil' → tampil profil lengkap.
 
 #### 4.2.3 Functional Requirements
@@ -295,7 +295,7 @@ Fitur ini memungkinkan pelanggan membuat pesanan jasa permak dengan mengunggah f
 **Prioritas: High**
 
 #### 4.3.2 Stimulus/Response Sequences
-- Pelanggan pilih penjahit → klik 'Pesan Sekarang' → isi form pesanan (foto, deskripsi, kategori, deadline) → sistem kirim ke ML Service untuk estimasi harga → tampilkan estimasi → pelanggan konfirmasi → pesanan dikirim ke penjahit.
+- Pelanggan pilih penjahit → klik 'Pesan Sekarang' → isi form pesanan (foto, deskripsi, kategori, deadline) → sistem kirim ke ML Service untuk estimasi harga → tampilkan estimasi → pelanggan konfirmasi → pesanan dibuat, notifikasi dikirim ke penjahit.
 - Penjahit terima notifikasi pesanan baru → buka detail pesanan → terima/tolak → jika terima, isi harga final → konfirmasi → pelanggan menerima notifikasi persetujuan.
 
 #### 4.3.3 Functional Requirements
@@ -314,7 +314,7 @@ Fitur ini menggunakan model Machine Learning berbasis Computer Vision untuk meng
 **Prioritas: Medium-High**
 
 #### 4.4.2 Stimulus/Response Sequences
-- Pelanggan upload foto & isi deskripsi → sistem kirim data ke ML Service → ML Service analisis gambar & kategori → return estimasi harga (min-max) beserta confidence level → tampilkan ke pelanggan dalam format 'Estimasi: Rp X – Rp Y'.
+- Pelanggan upload foto & isi deskripsi → sistem kirim data ke ML Service → ML Service analisis gambar & kategori → return estimasi harga (min-max) beserta confidence level → tampilkan ke pelanggan.
 
 #### 4.4.3 Functional Requirements
 - **REQ-04-01**: ML Service menganalisis foto pakaian menggunakan model Computer Vision untuk mengidentifikasi jenis pakaian dan tingkat kerusakan/perubahan yang diperlukan.
@@ -331,7 +331,7 @@ Fitur ini memungkinkan pelanggan melakukan pembayaran secara digital melalui ber
 **Prioritas: High**
 
 #### 4.5.2 Stimulus/Response Sequences
-- Penjahit terima pesanan → pelanggan diarahkan ke halaman pembayaran → pilih metode → Midtrans tampilkan payment page → pelanggan selesaikan pembayaran → Midtrans kirim webhook → sistem update status → notifikasi dikirim ke pelanggan & penjahit.
+- Penjahit terima pesanan → pelanggan diarahkan ke halaman pembayaran → pilih metode → Midtrans tampilkan payment page → pelanggan selesaikan pembayaran → Midtrans kirim webhook → sistem update status → konfirmasi ke kedua belah pihak.
 
 #### 4.5.3 Functional Requirements
 - **REQ-05-01**: Sistem mengintegrasikan Midtrans Snap API untuk pemrosesan pembayaran.
@@ -438,7 +438,7 @@ Fitur ini memungkinkan pelanggan memberikan ulasan dan rating kepada penjahit se
 
 ### 6.2 Internationalization Requirements
 
-Pada versi 1.0, sistem hanya mendukung Bahasa Indonesia. Arsitektur sistem dirancang dengan mempertimbangkan kemungkinan penambahan bahasa lain di versi mendatang menggunakan Flutter's l10n package dan Laravel's localization.
+Pada versi 1.0, sistem hanya mendukung Bahasa Indonesia. Arsitektur sistem dirancang dengan mempertimbangkan kemungkinan penambahan bahasa lain di versi mendatang menggunakan Flutter's l10n package dan Laravel localization.
 
 ### 6.3 Legal Requirements
 
@@ -465,3 +465,450 @@ Pada versi 1.0, sistem hanya mendukung Bahasa Indonesia. Arsitektur sistem diran
   "data": { ... } | null,
   "errors": { ... } | null
 }
+```
+
+### 7.2 API Endpoints – Authentication (F-01)
+
+#### 7.2.1 POST `/auth/register`
+**Deskripsi**: Registrasi pengguna baru dengan email/HP
+
+**Request:**
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "phone": "08123456789",
+  "password": "SecurePass123!",
+  "user_type": "customer" | "tailor",
+  "terms_agreed": true
+}
+```
+
+**Response (201):**
+```json
+{
+  "status": "success",
+  "message": "OTP telah dikirim ke email Anda",
+  "data": {
+    "user_id": "USR-001",
+    "email": "john@example.com",
+    "otp_expires_at": "2026-04-29T10:15:00Z"
+  }
+}
+```
+
+#### 7.2.2 POST `/auth/verify-otp`
+**Deskripsi**: Verifikasi OTP untuk aktivasi akun
+
+**Request:**
+```json
+{
+  "user_id": "USR-001",
+  "otp_code": "123456"
+}
+```
+
+**Response (200):**
+```json
+{
+  "status": "success",
+  "message": "Akun berhasil diaktifkan",
+  "data": {
+    "user_id": "USR-001",
+    "access_token": "eyJhbGciOiJSUzI1NiIs...",
+    "refresh_token": "eyJhbGciOiJSUzI1NiIs...",
+    "expires_in": 3600
+  }
+}
+```
+
+#### 7.2.3 POST `/auth/login`
+**Deskripsi**: Login dengan email/password
+
+**Request:**
+```json
+{
+  "email": "john@example.com",
+  "password": "SecurePass123!"
+}
+```
+
+**Response (200):**
+```json
+{
+  "status": "success",
+  "message": "Login berhasil",
+  "data": {
+    "user_id": "USR-001",
+    "access_token": "eyJhbGciOiJSUzI1NiIs...",
+    "refresh_token": "eyJhbGciOiJSUzI1NiIs...",
+    "expires_in": 3600
+  }
+}
+```
+
+#### 7.2.4 POST `/auth/logout`
+**Deskripsi**: Logout dan invalidasi token
+
+**Request:** Header + Authorization Bearer Token
+
+**Response (200):**
+```json
+{
+  "status": "success",
+  "message": "Logout berhasil"
+}
+```
+
+### 7.3 API Endpoints – Tailor (F-02)
+
+#### 7.3.1 GET `/tailors/search`
+**Deskripsi**: Cari penjahit berdasarkan filter
+
+**Query Parameters:**
+- `latitude`: float (lokasi pengguna)
+- `longitude`: float (lokasi pengguna)
+- `radius`: int (dalam km, default 5)
+- `category`: string (optional)
+- `min_rating`: float (optional, 0-5)
+- `page`: int (default 1)
+- `limit`: int (default 20)
+
+**Response (200):**
+```json
+{
+  "status": "success",
+  "message": "Data penjahit ditemukan",
+  "data": {
+    "tailors": [
+      {
+        "tailor_id": "TLR-001",
+        "shop_name": "Jahitan Rapi",
+        "rating": 4.5,
+        "review_count": 120,
+        "distance": 2.3,
+        "latitude": -6.2088,
+        "longitude": 106.8456,
+        "categories": ["ubah_ukuran", "ganti_ritsleting"],
+        "photo_url": "https://..."
+      }
+    ],
+    "pagination": {
+      "current_page": 1,
+      "total_pages": 5,
+      "total_items": 100
+    }
+  }
+}
+```
+
+#### 7.3.2 GET `/tailors/{tailor_id}`
+**Deskripsi**: Dapatkan detail profil penjahit
+
+**Response (200):**
+```json
+{
+  "status": "success",
+  "data": {
+    "tailor_id": "TLR-001",
+    "shop_name": "Jahitan Rapi",
+    "owner_name": "Budi Santoso",
+    "rating": 4.5,
+    "review_count": 120,
+    "bio": "Penjahit berpengalaman 20 tahun",
+    "address": "Jl. Merdeka No. 123",
+    "phone": "081234567890",
+    "categories": ["ubah_ukuran", "ganti_ritsleting"],
+    "portfolio": [
+      {
+        "photo_url": "https://...",
+        "description": "Hasil permak celana"
+      }
+    ],
+    "reviews": [
+      {
+        "customer_name": "Andi",
+        "rating": 5,
+        "comment": "Bagus, cepat!",
+        "created_at": "2026-04-20T10:00:00Z"
+      }
+    ]
+  }
+}
+```
+
+### 7.4 API Endpoints – Orders (F-03, F-04)
+
+#### 7.4.1 POST `/orders`
+**Deskripsi**: Buat pesanan baru
+
+**Request (multipart/form-data):**
+```
+tailor_id: "TLR-001"
+category: "ubah_ukuran"
+description: "Perlu dipanjangin 5cm"
+deadline: "2026-05-10"
+delivery_mode: "pickup"
+photos: [file1.jpg, file2.jpg]
+```
+
+**Response (201):**
+```json
+{
+  "status": "success",
+  "message": "Pesanan dibuat, menunggu estimasi harga",
+  "data": {
+    "order_id": "ORD-001",
+    "status": "pending_estimation",
+    "created_at": "2026-04-29T10:00:00Z"
+  }
+}
+```
+
+#### 7.4.2 GET `/orders/{order_id}/estimate`
+**Deskripsi**: Dapatkan estimasi harga dari ML Service
+
+**Response (200):**
+```json
+{
+  "status": "success",
+  "data": {
+    "order_id": "ORD-001",
+    "estimated_price": {
+      "min": 50000,
+      "max": 100000,
+      "currency": "IDR"
+    },
+    "confidence_level": 0.87,
+    "breakdown": {
+      "labor": 40000,
+      "material": 20000
+    }
+  }
+}
+```
+
+#### 7.4.3 GET `/orders/{order_id}`
+**Deskripsi**: Dapatkan detail pesanan
+
+**Response (200):**
+```json
+{
+  "status": "success",
+  "data": {
+    "order_id": "ORD-001",
+    "customer_id": "USR-001",
+    "tailor_id": "TLR-001",
+    "status": "waiting_confirmation",
+    "category": "ubah_ukuran",
+    "description": "Perlu dipanjangin 5cm",
+    "deadline": "2026-05-10",
+    "delivery_mode": "pickup",
+    "estimated_price": {
+      "min": 50000,
+      "max": 100000
+    },
+    "final_price": null,
+    "payment_status": "pending",
+    "timeline": [
+      {
+        "status": "waiting_confirmation",
+        "timestamp": "2026-04-29T10:00:00Z"
+      }
+    ],
+    "created_at": "2026-04-29T10:00:00Z"
+  }
+}
+```
+
+### 7.5 API Endpoints – Payments (F-05)
+
+#### 7.5.1 POST `/payments/create-transaction`
+**Deskripsi**: Buat transaksi pembayaran via Midtrans
+
+**Request:**
+```json
+{
+  "order_id": "ORD-001",
+  "amount": 50000,
+  "payment_type": "dp" | "full"
+}
+```
+
+**Response (200):**
+```json
+{
+  "status": "success",
+  "data": {
+    "transaction_id": "TXN-001",
+    "order_id": "ORD-001",
+    "amount": 50000,
+    "snap_token": "0e4cb67f-4d78-4f40-a0da-0c9c2e9baf97",
+    "redirect_url": "https://app.midtrans.com/snap/v2/..."
+  }
+}
+```
+
+#### 7.5.2 POST `/payments/webhook`
+**Deskripsi**: Webhook dari Midtrans untuk konfirmasi pembayaran
+
+**Request:**
+```json
+{
+  "transaction_id": "TXN-001",
+  "order_id": "ORD-001",
+  "status_code": "200",
+  "transaction_status": "settlement" | "pending" | "deny"
+}
+```
+
+**Response (200):**
+```json
+{
+  "status": "success",
+  "message": "Pembayaran berhasil diproses"
+}
+```
+
+### 7.6 API Endpoints – Order Status (F-06)
+
+#### 7.6.1 PUT `/orders/{order_id}/status`
+**Deskripsi**: Update status pesanan
+
+**Request:**
+```json
+{
+  "status": "confirmed" | "in_progress" | "ready_pickup" | "completed"
+}
+```
+
+**Response (200):**
+```json
+{
+  "status": "success",
+  "message": "Status pesanan diperbarui",
+  "data": {
+    "order_id": "ORD-001",
+    "new_status": "in_progress",
+    "updated_at": "2026-04-29T10:15:00Z"
+  }
+}
+```
+
+#### 7.6.2 POST `/orders/{order_id}/messages`
+**Deskripsi**: Kirim pesan chat dalam pesanan
+
+**Request (multipart/form-data):**
+```
+message: "Berapa lama estimasi waktu?"
+photo: (optional) file.jpg
+```
+
+**Response (201):**
+```json
+{
+  "status": "success",
+  "data": {
+    "message_id": "MSG-001",
+    "sender_id": "USR-001",
+    "message": "Berapa lama estimasi waktu?",
+    "created_at": "2026-04-29T10:20:00Z"
+  }
+}
+```
+
+### 7.7 API Endpoints – Reviews (F-07)
+
+#### 7.7.1 POST `/reviews`
+**Deskripsi**: Buat ulasan untuk penjahit
+
+**Request (multipart/form-data):**
+```
+order_id: "ORD-001"
+rating: 5
+comment: "Hasil permak sangat memuaskan!"
+photos: [file1.jpg, file2.jpg]
+```
+
+**Response (201):**
+```json
+{
+  "status": "success",
+  "message": "Ulasan berhasil ditambahkan",
+  "data": {
+    "review_id": "REV-001",
+    "order_id": "ORD-001",
+    "tailor_id": "TLR-001",
+    "rating": 5,
+    "created_at": "2026-04-29T10:30:00Z"
+  }
+}
+```
+
+#### 7.7.2 GET `/tailors/{tailor_id}/reviews`
+**Deskripsi**: Dapatkan daftar ulasan penjahit
+
+**Query Parameters:**
+- `page`: int (default 1)
+- `limit`: int (default 10)
+
+**Response (200):**
+```json
+{
+  "status": "success",
+  "data": {
+    "tailor_id": "TLR-001",
+    "average_rating": 4.5,
+    "total_reviews": 120,
+    "reviews": [
+      {
+        "review_id": "REV-001",
+        "customer_name": "Andi",
+        "rating": 5,
+        "comment": "Hasil permak sangat memuaskan!",
+        "photos": ["https://..."],
+        "created_at": "2026-04-29T10:30:00Z"
+      }
+    ]
+  }
+}
+```
+
+---
+
+## 8. Appendices
+
+### Glossary & Terminology
+
+| Istilah / Akronim | Definisi |
+|---|---|
+| **SRS** | Software Requirements Specification – dokumen yang mendeskripsikan kebutuhan perangkat lunak secara lengkap. |
+| **TailoriX** | Nama platform digital jasa permak dan alterasi pakaian yang dikembangkan. |
+| **Permak Baju** | Layanan perbaikan, perubahan ukuran, atau modifikasi pakaian yang sudah ada. |
+| **JWT** | JSON Web Token – standar terbuka untuk transmisi informasi secara aman antar pihak sebagai objek JSON. |
+| **ML** | Machine Learning – cabang kecerdasan buatan yang memungkinkan sistem belajar dari data. |
+| **n8n** | Platform workflow automation open-source yang digunakan untuk otomasi notifikasi dan proses bisnis. |
+| **Midtrans** | Payment gateway gateway Indonesia yang menyediakan berbagai metode pembayaran digital. |
+| **MinIO** | Object storage S3-compatible untuk menyimpan file foto dan dokumen. |
+| **FCM** | Firebase Cloud Messaging – layanan push notification real-time dari Google. |
+| **OTP** | One-Time Password – kode 6 digit yang dikirim untuk verifikasi autentikasi. |
+| **HTTPS** | Hypertext Transfer Protocol Secure – protokol komunikasi web yang terenkripsi. |
+| **TLS** | Transport Layer Security – protokol enkripsi untuk komunikasi jaringan. |
+| **REST API** | Representational State Transfer – arsitektur API yang menggunakan HTTP verbs (GET, POST, PUT, DELETE). |
+| **DP** | Down Payment – pembayaran awal/uang muka sebagian dari harga. |
+| **Webhook** | Callback HTTP yang dikirim dari sistem eksternal ke sistem kami saat event tertentu terjadi. |
+| **Rate Limiting** | Mekanisme pembatasan jumlah request yang diizinkan per periode waktu. |
+| **Bcrypt** | Algoritma hashing password yang aman dengan mechanism salting. |
+| **AES-256** | Advanced Encryption Standard dengan key 256-bit untuk enkripsi data. |
+| **MTBF** | Mean Time Between Failures – rata-rata waktu sistem berjalan sebelum terjadi kegagalan. |
+| **UU PDP** | Undang-Undang Perlindungan Data Pribadi Indonesia No. 27 Tahun 2022. |
+| **2FA** | Two-Factor Authentication – autentikasi ganda menggunakan dua metode verifikasi. |
+| **OWASP Top 10** | Daftar 10 kerentanan keamanan aplikasi web paling kritis versi OWASP. |
+| **Virtualisasi** | Teknologi menjalankan multiple sistem operasi atau layanan dalam satu hardware. |
+| **Docker** | Platform containerization untuk packaging aplikasi dengan dependency dalam image. |
+| **Kubernetes** | Orchestration system untuk automasi deployment, scaling, dan management container. |
+| **CI/CD** | Continuous Integration / Continuous Deployment – praktik otomasi build, test, dan deployment. |
+
+---
+
+**Dokumen ini adalah milik Tim Pengembang TailoriX untuk keperluan akademik Mata Kuliah Rekayasa Perangkat Lunak 2026.**
