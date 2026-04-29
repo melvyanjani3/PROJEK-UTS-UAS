@@ -7,7 +7,21 @@ Mata Kuliah: Rekayasa Perangkat Lunak
 April 2025
 
 ---
+| Nama |
+|------|
+|Muhammad Ilyas Fauzi  |
+|Julia Desteny Deodonia Langkedeng |
+|Nazwa Ima Fadia|
+|Gilang Anugrah |
+|muhammad rifqy wildan|
+|Wahyu Bonita Juliana Sari |
+|Aal Maulana |
+|Caryksha Aulia Putri |
 
+**PROGRAM STUDI SISTEM INFORMASI**
+**FAKULTAS ILMU KOMPUTER DAN SISTEM INFORMASI**
+**UNIVERSITAS KEBANGSAAN REPUBLIK INDONESIA**
+**TAHUN 2026**
 ## Revision History
 
 | Name | Date | Reason For Changes | Version |
