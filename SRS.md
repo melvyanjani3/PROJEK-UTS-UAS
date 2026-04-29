@@ -458,4 +458,61 @@ Bagian ini mendefinisikan kebutuhan spesifik untuk komponen kecerdasan buatan ya
 - Fallback Mechanism: Jika ML service tidak tersedia (down), sistem harus mampu beralih ke mode input harga manual oleh penjahit.
 
 ---
+## Appendix A: Glossary
+
+| Istilah / Akronim | Definisi |
+|------------------|----------|
+| **SRS** | *Software Requirements Specification* – dokumen yang mendeskripsikan kebutuhan perangkat lunak secara lengkap, mencakup kebutuhan fungsional dan non-fungsional. |
+| **TailoriX** | Nama platform digital yang dikembangkan untuk menyediakan layanan permak dan alterasi pakaian secara online. |
+| **Permak Baju** | Layanan perbaikan, perubahan ukuran, atau modifikasi pakaian yang sudah ada agar sesuai dengan kebutuhan pengguna. |
+| **JWT** | *JSON Web Token* – standar terbuka (RFC 7519) yang digunakan untuk transmisi informasi secara aman antar pihak dalam bentuk objek JSON, biasanya digunakan untuk autentikasi dan otorisasi. |
+| **ML** | *Machine Learning* – cabang dari kecerdasan buatan (*Artificial Intelligence*) yang memungkinkan sistem belajar dari data dan meningkatkan performa tanpa diprogram secara eksplisit. |
+| **n8n** | Platform *workflow automation* berbasis open-source yang digunakan untuk mengotomatisasi proses bisnis seperti notifikasi, integrasi sistem, dan alur kerja digital. |
+| **Midtrans** | Payment gateway Indonesia yang mendukung berbagai metode pembayaran digital seperti transfer bank, e-wallet, kartu kredit, dan lainnya. |
+| **DP** | *Down Payment* / Uang Muka – pembayaran awal sebagian dari total harga yang harus dibayar sebelum layanan diproses. |
+| **MinIO** | Object storage server yang kompatibel dengan Amazon S3 API, digunakan untuk menyimpan file seperti foto, dokumen, dan media lainnya. |
+| **OTP** | *One-Time Password* – kode sandi sekali pakai yang digunakan untuk proses verifikasi identitas pengguna secara aman. |
+| **UMKM** | *Usaha Mikro, Kecil, dan Menengah* – kategori usaha di Indonesia yang diklasifikasikan berdasarkan skala modal dan omzet. |
+| **REQ** | *Requirement* – kode identifikasi unik yang digunakan untuk menandai setiap kebutuhan fungsional dalam dokumen SRS. |
+| **FCM** | *Firebase Cloud Messaging* – layanan dari Google yang digunakan untuk mengirim push notification ke aplikasi mobile maupun web. |
+| **TBD** | *To Be Determined* – istilah yang menunjukkan bahwa suatu informasi belum ditentukan dan akan diputuskan di kemudian hari. |
+
+---
+
+## Appendix B: Analysis Models
+
+
+**Use Case Diagram**
+
+**Activity Diagram**
+
+**Rancangan Database**
+
+**Rancangan Arsitektur sistem**
+
+**Rancangan Arsitektur Teknologi**
+
+**Class Diagram**
+
+**Component Diagram**
+
+**Deployment Diagram**
+
+
+**UI**
+
+
+---
+
+## Appendix C: To Be Determined List
+
+| No | Item TBD | Keterangan |
+|----|----------|-----------|
+| 1 | Integrasi Payment Gateway | Integrasi otomatis dengan payment gateway (Midtrans/Xendit) direncanakan untuk versi 2.0. |
+| 2 | Multi-Lingkungan Support | Dukungan untuk lebih dari satu RT/RW dalam satu instance aplikasi. |
+| 3 | Fitur Chat/Forum Warga | Fitur komunikasi antar warga dalam aplikasi. |
+| 4 | Integrasi SMS Gateway | Pengiriman OTP dan notifikasi melalui SMS untuk pengguna tanpa smartphone. |
+| 5 | Web Admin Dashboard | Panel admin berbasis web sebagai alternatif aplikasi mobile. |
+
+---
 
