@@ -446,5 +446,16 @@ Pada versi 1.0, sistem hanya mendukung Bahasa Indonesia. Arsitektur sistem diran
 - Syarat & Ketentuan serta Kebijakan Privasi harus ditampilkan dan disetujui pengguna saat registrasi.
 - Platform harus mematuhi regulasi Bank Indonesia terkait transaksi digital (PBI No.23/6/PBI/2021).
 
+### 6.4 Machine Learning Requirements
+Bagian ini mendefinisikan kebutuhan spesifik untuk komponen kecerdasan buatan yang mendukung fitur F-04: Estimasi Harga Otomatis.
+
+- Model Estimasi Harga: Menggunakan model Computer Vision (seperti CNN atau ViT) untuk menganalisis foto pakaian guna mengidentifikasi jenis pakaian dan tingkat kerumitan perbaikan.
+- Deployment Service: ML service di-deploy sebagai REST API menggunakan FastAPI di dalam Docker container.
+- Integrasi Sistem: API ML dikonsumsi secara internal oleh Laravel backend untuk memberikan rentang harga (min-max) kepada pelanggan secara real-time.
+-  Workflow Otomasi: Data hasil estimasi dan feedback harga final dikirimkan ke engine n8n untuk pemantauan akurasi model secara berkala.
+- Mekanisme Retraining: Model harus di-retrain secara berkala menggunakan riwayat estimasi dan harga final yang disimpan di database untuk meningkatkan akurasi confidence level.
+- SLA Performa: Waktu respons inferensi model tidak boleh melebihi 10 detik per request untuk menjaga pengalaman pengguna.
+- Fallback Mechanism: Jika ML service tidak tersedia (down), sistem harus mampu beralih ke mode input harga manual oleh penjahit.
+
 ---
 
