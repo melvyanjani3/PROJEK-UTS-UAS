@@ -506,13 +506,14 @@ Bagian ini mendefinisikan kebutuhan spesifik untuk komponen kecerdasan buatan ya
 
 ## Appendix C: To Be Determined List
 
-| No | Item TBD | Keterangan |
-|----|----------|-----------|
-| 1 | Integrasi Payment Gateway | Integrasi otomatis dengan payment gateway (Midtrans/Xendit) direncanakan untuk versi 2.0. |
-| 2 | Multi-Lingkungan Support | Dukungan untuk lebih dari satu RT/RW dalam satu instance aplikasi. |
-| 3 | Fitur Chat/Forum Warga | Fitur komunikasi antar warga dalam aplikasi. |
-| 4 | Integrasi SMS Gateway | Pengiriman OTP dan notifikasi melalui SMS untuk pengguna tanpa smartphone. |
-| 5 | Web Admin Dashboard | Panel admin berbasis web sebagai alternatif aplikasi mobile. |
+| No. | Item TBD | Keterangan |
+|-----|----------|-----------|
+| **1** | Spesifikasi dataset untuk training model ML estimasi harga | Akan ditentukan setelah konsultasi dengan tim Machine Learning dan penjahit mitra. |
+| **2** | SLA (*Service Level Agreement*) dengan Midtrans untuk *settlement time* | Bergantung pada hasil negosiasi kontrak dengan pihak Midtrans. |
+| **3** | Skema komisi dan disbursement ke penjahit mitra | Memerlukan finalisasi model bisnis bersama stakeholder. |
+| **4** | Kebijakan *dispute resolution* antara pelanggan dan penjahit | Perlu konsultasi dan persetujuan dari tim legal. |
+| **5** | Spesifikasi teknis fitur *in-app chat* (real-time WebSocket vs polling) | Akan diputuskan berdasarkan kapasitas server dan pertimbangan budget. |
+
 
 ---
 
