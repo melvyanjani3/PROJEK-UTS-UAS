@@ -492,14 +492,15 @@ Bagian ini mendefinisikan kebutuhan spesifik untuk komponen kecerdasan buatan ya
 
 **Rancangan Arsitektur Teknologi**
 
+**UI**
+
 **Class Diagram**
+
+**Sequence Diagram**
 
 **Component Diagram**
 
 **Deployment Diagram**
-
-
-**UI**
 
 
 ---
