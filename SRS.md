@@ -484,14 +484,26 @@ Bagian ini mendefinisikan kebutuhan spesifik untuk komponen kecerdasan buatan ya
 **Use Case Diagram**
 
 **Activity Diagram**
+[Uploading activity diagram.mdj…]()
+
 
 **Rancangan Database**
 
 **Rancangan Arsitektur sistem**
+<img width="1600" height="917" alt="WhatsApp Image 2026-04-26 at 06 17 09" src="https://github.com/user-attachments/assets/e129a765-744b-49fc-9a4e-b7fa49cfb956" />
+
 
 **Rancangan Arsitektur Teknologi**
+<img width="1112" height="865" alt="WhatsApp Image 2026-04-26 at 15 29 31" src="https://github.com/user-attachments/assets/4fa79319-52cc-42be-a6fd-6eb76e9dabad" />
+
+
 
 **UI**
+<img width="713" height="901" alt="WhatsApp Image 2026-04-26 at 15 29 30" src="https://github.com/user-attachments/assets/c83c0ebe-c7a1-4a6d-93b5-11a7b0f0f230" />
+<img width="1168" height="680" alt="WhatsApp Image 2026-04-26 at 15 29 30 (1)" src="https://github.com/user-attachments/assets/d711ee64-0a72-494c-a5a2-c0da997b88fa" />
+<img width="1168" height="680" alt="WhatsApp Image 2026-04-26 at 15 29 30 (1)" src="https://github.com/user-attachments/assets/bbc30916-71c5-4708-b5e7-8a99c11922b7" />
+
+
 
 **Class Diagram**
 
