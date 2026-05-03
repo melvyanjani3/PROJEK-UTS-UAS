@@ -482,28 +482,23 @@ Bagian ini mendefinisikan kebutuhan spesifik untuk komponen kecerdasan buatan ya
 
 
 **Use Case Diagram**
+<img width="842" height="913" alt="use case" src="https://github.com/user-attachments/assets/c8ad23a4-1c8f-4dbd-8bf4-9bf6a64fd852" />
 
 **Activity Diagram**
-[Uploading activity diagram.mdj…]()
-
+<img width="714" height="1600" alt="diagram activity" src="https://github.com/user-attachments/assets/afcb8a34-6a92-408d-ab0d-0e62f7165b9b" />
 
 **Rancangan Database**
 
-**Rancangan Arsitektur sistem**
-<img width="1600" height="917" alt="WhatsApp Image 2026-04-26 at 06 17 09" src="https://github.com/user-attachments/assets/e129a765-744b-49fc-9a4e-b7fa49cfb956" />
-
+**Rancangan Arsitektur Sistem**
+<img width="1600" height="879" alt="rancangan arsitektur sistem" src="https://github.com/user-attachments/assets/145b96b9-66aa-45a2-a41b-dc54ac8a11f7" />
 
 **Rancangan Arsitektur Teknologi**
-<img width="1112" height="865" alt="WhatsApp Image 2026-04-26 at 15 29 31" src="https://github.com/user-attachments/assets/4fa79319-52cc-42be-a6fd-6eb76e9dabad" />
-
-
+<img width="1536" height="929" alt="rancangan arsitektur teknologi" src="https://github.com/user-attachments/assets/de610e9f-2306-4b49-88aa-5dd690cb6870" />
 
 **UI**
-<img width="713" height="901" alt="WhatsApp Image 2026-04-26 at 15 29 30" src="https://github.com/user-attachments/assets/c83c0ebe-c7a1-4a6d-93b5-11a7b0f0f230" />
-<img width="1168" height="680" alt="WhatsApp Image 2026-04-26 at 15 29 30 (1)" src="https://github.com/user-attachments/assets/d711ee64-0a72-494c-a5a2-c0da997b88fa" />
-<img width="1168" height="680" alt="WhatsApp Image 2026-04-26 at 15 29 30 (1)" src="https://github.com/user-attachments/assets/bbc30916-71c5-4708-b5e7-8a99c11922b7" />
-
-
+<img width="713" height="901" alt="WhatsApp Image 2026-04-26 at 15 29 30" src="https://github.com/user-attachments/assets/ed074ac1-aaa8-4b41-9b67-e0e2107a06ae" />
+<img width="1168" height="680" alt="WhatsApp Image 2026-04-26 at 15 29 30 (1)" src="https://github.com/user-attachments/assets/02eb019c-e8b1-4b68-b8ab-846f8574a24e" />
+<img width="1112" height="865" alt="WhatsApp Image 2026-04-26 at 15 29 31" src="https://github.com/user-attachments/assets/b9d78651-7f26-4c03-80c5-29fa6911bc1b" />
 
 **Class Diagram**
 
