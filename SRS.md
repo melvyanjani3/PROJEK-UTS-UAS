@@ -15,7 +15,6 @@ April 2025
 |usman |
 |aziz |
 |denis |
-|mela |
 
 **PROGRAM STUDI SISTEM INFORMASI**
 **FAKULTAS ILMU KOMPUTER DAN SISTEM INFORMASI**
